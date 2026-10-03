@@ -15,3 +15,18 @@ links.querySelectorAll('a').forEach((link) => {
     toggle.setAttribute('aria-expanded', 'false');
   });
 });
+
+// Link every Ready Gary card on the main page to its permanent landing page.
+document.querySelectorAll('article').forEach((article) => {
+  const heading = article.querySelector('h3');
+  if (!heading || heading.textContent.trim() !== 'Ready Gary') return;
+
+  const status = article.querySelector('.project-status');
+  if (!status) return;
+
+  const link = document.createElement('a');
+  link.href = '/ready-gary/';
+  link.textContent = 'Explore Ready Gary →';
+  link.className = status.closest('#writing') ? 'button secondary' : '';
+  status.replaceWith(link);
+});
