@@ -45,7 +45,13 @@
       </header>
       <div>
         <div class="anime-player">
-          <video width="768" height="1152" src="anime/Episode-2.mp4" poster="anime/Episode-2-still.webp" controls playsinline preload="none" aria-labelledby="anime-episode-2-heading" aria-describedby="anime-episode-2-caption"></video>
+          <div id="anime-episode-2-preview" style="position:relative">
+            <img src="anime/Episode-2-still.webp" width="1024" height="1536" alt="Ready Gary holds a radio beside a first aid kit and a note reading We are here for you." style="display:block;width:100%;height:auto;border-radius:12px">
+            <button type="button" class="btn anime-play" id="anime-episode-2-play">Play Episode 2</button>
+          </div>
+          <div id="anime-episode-2-video" hidden>
+            <video width="768" height="1152" src="anime/Episode-2.mp4" poster="anime/Episode-2-still.webp" controls playsinline preload="none" aria-labelledby="anime-episode-2-heading" aria-describedby="anime-episode-2-caption"></video>
+          </div>
         </div>
         <p class="anime-caption" id="anime-episode-2-caption">Night 1 continues. Gary answers the radio call from North Gary, and the medical supplies they need turn out to be something bigger than bandages: neighbors showing up, a warm meal, a note that says “We are here for you”, and a plan to check on each other. The first aid kit is a metaphor for the care a community carries for one another. Prepared, not scared.</p>
       </div>
@@ -82,6 +88,18 @@
   </div>
 </section>
 <script src="anime/player.js" defer></script>
+<script>
+  document.getElementById('anime-episode-2-play').addEventListener('click', () => {
+    const preview = document.getElementById('anime-episode-2-preview')
+    const playback = document.getElementById('anime-episode-2-video')
+    const video = playback.querySelector('video')
+    playback.hidden = false
+    preview.hidden = true
+    video.focus()
+    video.play().catch(() => {})
+  })
+</script>
+
 <section class="why"><div class="wrap"><p class="big">When the power goes out for twelve, thirteen, fourteen days, kids shouldn't just sit in the dark waiting for help.</p><p>They should know what to do. Ready Gary turns emergency preparedness into something kids can learn letter by letter, with crayons in hand, so the skills stick before they're ever needed. Being self-reliant isn't a luxury. It's something every child in Gary deserves to learn.</p></div></section>
 <section><div class="wrap split"><div><h2>What it is</h2><p class="prose">Ready Gary is a children's coloring book that walks through emergency preparedness from A to Z. Every page pairs a letter with something kids can understand, remember, and talk about with their families.</p></div><ul class="facts"><li style="--c:var(--blue)"><strong>Made for Gary</strong>Written with this city's families, schools, and neighborhoods in mind.</li><li style="--c:var(--green)"><strong>Made by a Gary teacher</strong>Written, illustrated, and laid out by Wendell Mosby.</li><li style="--c:var(--red)"><strong>Made to be used</strong>A coloring book kids will actually pick up, not a pamphlet they'll lose.</li></ul></div></section>
 <section class="inside"><div class="wrap peek"><figure><img src="a-is-for-alert-fixed.webp" alt="Coloring page: A is for Alert. A family sits together in their living room while the mother shows the children an emergency alert on her phone. Text reads: When an alert comes through, stop and hear. A trusted adult will help make the message clear. A Try It box asks kids to name two ways their family receives emergency alerts." width="600" height="900" loading="lazy"></figure><div class="prose"><h2>Look inside: A is for Alert</h2><p>Every letter gets its own page with three parts working together.</p><p><strong>A rhyme kids can remember.</strong> "When an alert comes through, stop and hear. A trusted adult will help make the message clear." Short enough to say out loud, simple enough to recall when it counts.</p><p><strong>A family scene to color.</strong> Kids see families who look like theirs, at home, handling an emergency together and staying calm.</p><p><strong>A Try It activity.</strong> Each page ends with a question kids answer with their families, like naming two ways your family receives emergency alerts. The learning goes home with them.</p></div></div></section>
