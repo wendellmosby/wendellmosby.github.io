@@ -45,7 +45,13 @@
       </header>
       <div>
         <div class="anime-player">
-          <video width="768" height="1152" src="anime/Episode-3.mp4" poster="anime/Episode-3-still.webp" controls playsinline preload="none" aria-labelledby="anime-episode-3-heading" aria-describedby="anime-episode-3-caption"></video>
+          <div id="anime-episode-3-preview" style="position:relative">
+            <img src="anime/Episode-3-still.webp" width="1024" height="1536" alt="Ready Gary holds a neighborhood map as families light their porches along the street." style="display:block;width:100%;height:auto;border-radius:12px">
+            <button type="button" class="btn anime-play" id="anime-episode-3-play">Play Episode 3</button>
+          </div>
+          <div id="anime-episode-3-video" hidden>
+            <video width="768" height="1152" src="anime/Episode-3.mp4" poster="anime/Episode-3-still.webp" controls playsinline preload="none" aria-labelledby="anime-episode-3-heading" aria-describedby="anime-episode-3-caption"></video>
+          </div>
         </div>
         <p class="anime-caption" id="anime-episode-3-caption">Night 1 continues—one light, then another, then another. Gary maps the porch light chain as neighbors help light the way together. Porch by porch, neighbor by neighbor, the street comes alive. Prepared, not scared.</p>
       </div>
@@ -111,6 +117,15 @@
   document.getElementById('anime-episode-2-play').addEventListener('click', () => {
     const preview = document.getElementById('anime-episode-2-preview')
     const playback = document.getElementById('anime-episode-2-video')
+    const video = playback.querySelector('video')
+    playback.hidden = false
+    preview.hidden = true
+    video.focus()
+    video.play().catch(() => {})
+  })
+  document.getElementById('anime-episode-3-play').addEventListener('click', () => {
+    const preview = document.getElementById('anime-episode-3-preview')
+    const playback = document.getElementById('anime-episode-3-video')
     const video = playback.querySelector('video')
     playback.hidden = false
     preview.hidden = true
