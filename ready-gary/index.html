@@ -38,6 +38,56 @@
     <h2 id="anime-heading">Meet Gary, in Anime</h2>
     <p class="anime-intro prose">Meet Gary, in anime. Night 1, power out in Gary, August 2026. The storm has passed, and Gary is ready to help each other, one page at a time. This is Ready Gary: Emergency Preparedness from A to Z, a coloring and activity book that helps kids and families talk, plan, and practice being prepared, not scared.</p>
     <!-- Add each new episode above the previous episode. -->
+    <article class="anime-episode" id="ready-gary-episode-5" aria-labelledby="anime-episode-5-heading">
+      <header class="anime-heading">
+        <p>Episode 5 · <time datetime="2026-11-19">Thursday, November 19, 2026</time></p>
+        <h3 id="anime-episode-5-heading">The Question Mark Becomes a Star</h3>
+      </header>
+      <div>
+        <div class="anime-player">
+          <div id="anime-episode-5-preview" style="position:relative">
+            <img src="anime/Episode-5-still.webp" width="1024" height="1536" alt="Ready Gary Anime Episode 5: The Question Mark Becomes a Star." style="display:block;width:100%;height:auto;border-radius:12px">
+            <button type="button" class="btn anime-play" id="anime-episode-5-play">Play Episode 5</button>
+          </div>
+          <div id="anime-episode-5-video" hidden>
+            <video width="768" height="1152" src="anime/Episode-5.mp4" poster="anime/Episode-5-still.webp" controls playsinline preload="none" aria-labelledby="anime-episode-5-heading" aria-describedby="anime-episode-5-caption"></video>
+          </div>
+        </div>
+        <p class="anime-caption" id="anime-episode-5-caption">The next morning after the storm, the dark house porch light clicks on too, and Gary swaps the question mark on his clipboard map for a gold star. Porch by porch, neighbor by neighbor, the whole block lights up, because checking on each other is how a block stays ready. Prepared, not scared.</p>
+      </div>
+      <div class="prose">
+        <ul class="anime-links">
+          <li><a class="btn" href="https://www.kickstarter.com/projects/mosbyroom215/ready-gary-emergency-preparedness-from-a-to-z-0">Back Ready Gary on Kickstarter</a></li>
+          <li><a href="https://youtube.com/shorts/jtnXWrAENV0?feature=shared">Listen to the song, Ready Gary, Ready Crew!</a></li>
+          <li><a href="https://youtube.com/playlist?list=PLCO0ZJWEX7Pc">Full song playlist</a></li>
+        </ul>
+      </div>
+    </article>
+    <article class="anime-episode" id="ready-gary-episode-4" aria-labelledby="anime-episode-4-heading">
+      <header class="anime-heading">
+        <p>Episode 4 · <time datetime="2026-11-18">Wednesday, November 18, 2026</time></p>
+        <h3 id="anime-episode-4-heading">The House That Stayed Dark</h3>
+      </header>
+      <div>
+        <div class="anime-player">
+          <div id="anime-episode-4-preview" style="position:relative">
+            <img src="anime/Episode-4-preview.jpg" width="1024" height="1536" alt="Ready Gary Anime Episode 4: The House That Stayed Dark." style="display:block;width:100%;height:auto;border-radius:12px">
+            <button type="button" class="btn anime-play" id="anime-episode-4-play">Play Episode 4</button>
+          </div>
+          <div id="anime-episode-4-video" hidden>
+            <video width="768" height="1152" src="anime/Ready%20Gary%20Anime%20Episode%204%2C%20second%20regeneration%2C%20anime%20style%2C%20American%20kid%20voice.mp4" poster="anime/Episode-4-preview.jpg" controls playsinline preload="none" aria-labelledby="anime-episode-4-heading" aria-describedby="anime-episode-4-caption"></video>
+          </div>
+        </div>
+        <p class="anime-caption" id="anime-episode-4-caption">Night 1 continues. Gary walks the route he mapped from the porch lights, and one house stays dark. He marks it with a question mark on his clipboard map, ready to check on whoever lives there tomorrow, because checking on each other is how a block stays ready. Prepared, not scared.</p>
+      </div>
+      <div class="prose">
+        <ul class="anime-links">
+          <li><a class="btn" href="https://www.kickstarter.com/projects/mosbyroom215/ready-gary-emergency-preparedness-from-a-to-z-0">Back Ready Gary on Kickstarter</a></li>
+          <li><a href="https://youtube.com/shorts/jtnXWrAENV0?feature=shared">Listen to the song, Ready Gary, Ready Crew!</a></li>
+          <li><a href="https://youtube.com/playlist?list=PLCO0ZJWEX7Pc">Full song playlist</a></li>
+        </ul>
+      </div>
+    </article>
     <article class="anime-episode" id="ready-gary-episode-3" aria-labelledby="anime-episode-3-heading">
       <header class="anime-heading">
         <p>Episode 3 · <time datetime="2026-11-17">Tuesday, November 17, 2026</time></p>
@@ -114,24 +164,17 @@
 </section>
 <script src="anime/player.js" defer></script>
 <script>
-  document.getElementById('anime-episode-2-play').addEventListener('click', () => {
-    const preview = document.getElementById('anime-episode-2-preview')
-    const playback = document.getElementById('anime-episode-2-video')
-    const video = playback.querySelector('video')
-    playback.hidden = false
-    preview.hidden = true
-    video.focus()
-    video.play().catch(() => {})
-  })
-  document.getElementById('anime-episode-3-play').addEventListener('click', () => {
-    const preview = document.getElementById('anime-episode-3-preview')
-    const playback = document.getElementById('anime-episode-3-video')
-    const video = playback.querySelector('video')
-    playback.hidden = false
-    preview.hidden = true
-    video.focus()
-    video.play().catch(() => {})
-  })
+  for (const episode of [2, 3, 4, 5]) {
+    document.getElementById(`anime-episode-${episode}-play`).addEventListener('click', () => {
+      const preview = document.getElementById(`anime-episode-${episode}-preview`)
+      const playback = document.getElementById(`anime-episode-${episode}-video`)
+      const video = playback.querySelector('video')
+      playback.hidden = false
+      preview.hidden = true
+      video.focus()
+      video.play().catch(() => {})
+    })
+  }
 </script>
 
 <section class="why"><div class="wrap"><p class="big">When the power goes out for twelve, thirteen, fourteen days, kids shouldn't just sit in the dark waiting for help.</p><p>They should know what to do. Ready Gary turns emergency preparedness into something kids can learn letter by letter, with crayons in hand, so the skills stick before they're ever needed. Being self-reliant isn't a luxury. It's something every child in Gary deserves to learn.</p></div></section>
