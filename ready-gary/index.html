@@ -38,6 +38,31 @@
     <h2 id="anime-heading">Meet Gary, in Anime</h2>
     <p class="anime-intro prose">Meet Gary, in anime. Night 1, power out in Gary, August 2026. The storm has passed, and Gary is ready to help each other, one page at a time. This is Ready Gary: Emergency Preparedness from A to Z, a coloring and activity book that helps kids and families talk, plan, and practice being prepared, not scared.</p>
     <!-- Add each new episode above the previous episode. -->
+    <article class="anime-episode" id="ready-gary-episode-7" aria-labelledby="anime-episode-7-heading">
+      <header class="anime-heading">
+        <p>Episode 7 · <time datetime="2026-11-21">Saturday, November 21, 2026</time></p>
+        <h3 id="anime-episode-7-heading">The Star Map at School</h3>
+      </header>
+      <div>
+        <div class="anime-player">
+          <div id="anime-episode-7-preview" style="position:relative">
+            <img src="anime/Episode-7-still.webp" width="1024" height="1536" alt="Ready Gary Anime Episode 7: The Star Map at School." style="display:block;width:100%;height:auto;border-radius:12px">
+            <button type="button" class="btn anime-play" id="anime-episode-7-play">Play Episode 7</button>
+          </div>
+          <div id="anime-episode-7-video" hidden>
+            <video width="768" height="1152" src="anime/Episode-7.mp4" poster="anime/Episode-7-still.webp" controls playsinline preload="none" aria-labelledby="anime-episode-7-heading" aria-describedby="anime-episode-7-caption"></video>
+          </div>
+        </div>
+        <p class="anime-caption" id="anime-episode-7-caption">Gary brings his star map to school, and his classmates start a star map of their own. Porch by porch, neighbor by neighbor, the whole block lights up, because checking on each other is how a block stays ready. Prepared, not scared.</p>
+      </div>
+      <div class="prose">
+        <ul class="anime-links">
+          <li><a class="btn" href="https://www.kickstarter.com/projects/mosbyroom215/ready-gary-emergency-preparedness-from-a-to-z-0">Back Ready Gary on Kickstarter</a></li>
+          <li><a href="https://youtube.com/shorts/jtnXWrAENV0?feature=shared">Listen to the song, Ready Gary, Ready Crew!</a></li>
+          <li><a href="https://youtube.com/playlist?list=PLCO0ZJWEX7Pc">Full song playlist</a></li>
+        </ul>
+      </div>
+    </article>
     <article class="anime-episode" id="ready-gary-episode-6" aria-labelledby="anime-episode-6-heading">
       <header class="anime-heading">
         <p>Episode 6 · <time datetime="2026-11-20">Friday, November 20, 2026</time></p>
@@ -189,7 +214,7 @@
 </section>
 <script src="anime/player.js" defer></script>
 <script>
-  for (const episode of [2, 3, 4, 5, 6]) {
+  for (const episode of [2, 3, 4, 5, 6, 7]) {
     document.getElementById(`anime-episode-${episode}-play`).addEventListener('click', () => {
       const preview = document.getElementById(`anime-episode-${episode}-preview`)
       const playback = document.getElementById(`anime-episode-${episode}-video`)
